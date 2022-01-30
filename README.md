@@ -13,3 +13,6 @@ They will be able to do the following:
 
 ## Screenshot
 <img src ="./assets/images/screenshot.png">
+
+## Link
+https://christine-zhe.github.io/scheduler/
