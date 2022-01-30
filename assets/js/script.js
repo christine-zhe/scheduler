@@ -4,15 +4,8 @@ var finalDate = currentDateEl.toLocaleString();
 document.getElementById("currentDay").textContent = finalDate;
 var currentHour = currentDateEl.getHours();
 // console.log(currentHour);
-// GIVEN I am using a daily planner to create a schedule
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
 
-// WHEN I scroll down
-// THEN I am presented with time blocks for standard business hours
-
-// WHEN I view the time blocks for that day
-// THEN each time block is color-coded to indicate whether it is in the past, present, or future
+// Color-coded for time blocks
 $(".time-block").each(function() {
     var blockTime = parseInt($(this).attr("id"));
     if(currentHour  > blockTime) {
@@ -35,7 +28,7 @@ $(".time-block").each(function() {
     }
 });
 
-
+// saves to local storage
 $(".saveBtn").on("click", function (){
     var taskDescription= $(this).siblings('.description').val();
     
@@ -44,13 +37,7 @@ $(".saveBtn").on("click", function (){
     localStorage.setItem(hourTime, taskDescription)
 });
 
-// WHEN I click into a time block
-// THEN I can enter an event
-
-// WHEN I click the save button for that time block
-// THEN the text for that event is saved in local storage
-// WHEN I refresh the page
-// THEN the saved events persist
+// keeps the items to show even after refreshing
 
 $("#9 .description").val(localStorage.getItem("9"));
 $("#10 .description").val(localStorage.getItem("10"));
